@@ -60,7 +60,7 @@ export const updateStudent = async (req: Request, res: Response): Promise<void> 
         res.send(student);
         
     } catch (error: any) {
-        console.error("Error fetching student: ", error.message);
+        console.error("Error updating student: ", error.message);
         res.status(500).send('Server error');
     }
 }
@@ -74,9 +74,9 @@ export const deleteStudent = async (req: Request, res: Response): Promise<void> 
             res.status(404).send('Student not found');
             return;
         }
-        res.status(200).send('Student deleted successfuly!');
+        res.send('Student deleted successfuly!');
     } catch (error: any) {
-        console.error("Error in deleting student: ", error.message);
+        console.error("Error deleting student: ", error.message);
         res.status(500).send('Server error');
     }
 }
